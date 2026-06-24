@@ -1,0 +1,70 @@
+{
+  "package": "FreshlyMart_Website_Package_V5_2_Pincode_Fixed",
+  "forms_connected": [
+    "sellerForm",
+    "hubForm",
+    "referForm",
+    "contactForm",
+    "returnForm",
+    "reviewForm",
+    "productSubmissionForm",
+    "stockUpdateForm",
+    "approveSellerForm",
+    "approveProductForm",
+    "rejectProductForm",
+    "checkoutForm",
+    "sellerLoginForm",
+    "adminLoginForm"
+  ],
+  "backend_file": "FreshlyMart_AppsScript.gs",
+  "version": "V5.8 Payment & Receipt Automation",
+  "changes": [
+    "Removed public Admin buttons/links",
+    "Moved admin code verification to Apps Script Settings sheet",
+    "Protected adminSummary and approval routes with admin token",
+    "Added SECURITY_NOTES.txt"
+  ],
+  "features_added": [
+    "Customer UPI payment verification",
+    "Automatic customer receipts",
+    "Payment reconciliation",
+    "Seller settlements",
+    "Supplier payments",
+    "Hub settlements",
+    "Delivery settlements",
+    "Settlement payment vouchers",
+    "Expense payment receipts",
+    "Admin dashboard Payments & Receipts tab"
+  ],
+  "generated_from": "V3 Secure Admin",
+  "main_backend_file": "FreshlyMart_AppsScript.gs",
+  "added": [
+    "GST mandatory by default for seller approval",
+    "FSSAI mandatory for food-related approval",
+    "Admin compliance relaxation with reason, valid until, approved by, and risk level",
+    "GST/FSSAI fields in seller/product forms"
+  ],
+  "payment_model": "UPI only to Freshly Mart; no cash handling by hubs/sellers/delivery partners",
+  "updated_files": [
+    "checkout.html",
+    "assets/app.js",
+    "FreshlyMart_AppsScript.gs",
+    "PAYMENT_SETUP.txt",
+    "README_SETUP.txt"
+  ],
+  "updated": "2026-06-24",
+  "packageName": "FreshlyMart_PWA_Package_V6_Installable_App",
+  "basedOn": "FreshlyMart_Website_Package_V5_8_Payment_Receipts_Automation",
+  "pwaFeatures": [
+    "manifest.webmanifest",
+    "service-worker.js",
+    "offline.html",
+    "assets/pwa.js",
+    "mobile bottom navigation",
+    "install prompt",
+    "app icons",
+    "mobile-first marketplace layout",
+    "PWA shortcuts"
+  ],
+  "notes": "PWA/mobile app package. Not a native Android/iOS app yet. Admin remains hidden/private."
+}

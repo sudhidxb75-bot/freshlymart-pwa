@@ -1,0 +1,19 @@
+Freshly Mart V5.4 Seller Area Fix
+
+Problem fixed:
+- Seller registration backend required Area, but sell-with-us.html did not include an Area field.
+- WhatsApp was optional on the form but required by backend validation.
+
+Changes made:
+- Added required Area field to seller registration form.
+- Made seller pincode required with 6-digit validation.
+- Backend now uses Mobile Number as WhatsApp number if WhatsApp is blank.
+- Hub partner form labels Area and Pincode as required.
+- Backend now also uses Mobile Number as WhatsApp for hub applications if WhatsApp is blank.
+
+After upload:
+1. Replace website files if using full package.
+2. Replace Apps Script with FreshlyMart_AppsScript.gs.
+3. Run setupFreshlyMart().
+4. Redeploy Apps Script as Web App.
+5. Paste Web App URL in assets/app.js if it changes.

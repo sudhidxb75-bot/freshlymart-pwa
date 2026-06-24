@@ -1,0 +1,140 @@
+Freshly Mart Backend Operations Guide - V5
+==========================================
+
+1. DAILY ORDER WORKFLOW
+-----------------------
+Use this after receiving orders:
+
+1. Open Google Sheet.
+2. Freshly Mart Backend > Validate Backend Data.
+3. Fix any important errors in ValidationErrors sheet.
+4. Freshly Mart Backend > Delivery Sheets > Generate Today's Delivery Sheets.
+5. Print or share the generated DELIVERY_YYYYMMDD_HUBID sheets with hub partners.
+6. After delivery, update OrderStatus and PaymentStatus in Orders sheet.
+
+2. DELIVERY / DISPATCH SHEETS
+-----------------------------
+The delivery sheet generator creates separate hub-wise sheets like:
+
+DELIVERY_20260624_HUB001
+DELIVERY_20260624_NO_HUB
+
+Each sheet includes:
+- Order ID
+- Customer name
+- Phone
+- Address
+- Items
+- Product total
+- Delivery charge
+- Grand total
+- Payment mode/status
+- Delivery slot
+- Customer signature column
+
+Generated delivery sheets can be safely deleted using:
+
+Freshly Mart Backend > Delivery Sheets > Clear Generated Delivery Sheets
+
+This deletes only sheets starting with DELIVERY_. It does not delete Orders or Products.
+
+3. REPORT GENERATION
+--------------------
+Available reports:
+
+- Today's Order Report -> DailyOrderReports sheet
+- Date Range Order Report -> DailyOrderReports sheet
+- Current Month Seller Statements -> SellerStatements sheet
+- Current Month Hub Statements -> HubStatements sheet
+- Current Month Customer Statements -> CustomerStatements sheet
+- Ratings & Performance -> ProductRatingSummary, SellerPerformance, HubPerformance
+
+4. SELLER STATEMENTS
+--------------------
+Seller statement calculation uses delivered order items.
+
+Formula:
+Gross Sales - Freshly Mart Commission = Net Payable
+
+Default commission is taken from:
+Settings > DefaultSellerCommissionPercent
+
+You can set seller-specific commission in:
+Sellers > CommissionPercent
+
+5. HUB STATEMENTS
+-----------------
+Hub statement calculation uses delivered orders.
+
+Default hub commission is taken from:
+Settings > DefaultHubCommissionPerOrder
+
+6. BACKEND VALIDATION
+---------------------
+Use:
+Freshly Mart Backend > Validate Backend Data
+
+It checks:
+- Missing product names
+- Missing categories
+- Invalid prices
+- Negative stock
+- Invalid phone numbers
+- Invalid pincodes
+- Invalid order/payment/product statuses
+- Missing seller/product/order IDs
+- Banner setup issues
+
+Issues appear in ValidationErrors sheet.
+
+7. FORM-SUBMISSION VALIDATION
+-----------------------------
+The Apps Script now validates form submissions before saving:
+
+- Seller registration
+- Hub partner registration
+- Referral
+- Contact
+- Product submission
+- Checkout order
+- Return request
+- Review/rating
+- Stock update
+
+If required fields are missing or invalid, the backend returns an error instead of saving bad data.
+
+8. SAFE CLEARING
+----------------
+Safe clearing options are limited to non-master data:
+
+- Clear generated DELIVERY_ sheets
+- Clear ValidationErrors
+- Clear report output sheets
+- Archive completed old orders
+
+Master sheets like Products, Sellers, Orders, Hubs and Settings are not mass-cleared by the normal safe clearing menu.
+
+9. ARCHIVING OLD ORDERS
+-----------------------
+Use:
+Freshly Mart Backend > Safe Clearing / Archive > Archive Delivered/Cancelled Orders Older Than 30 Days
+
+This copies old completed orders to:
+- OrderArchive
+- OrderItemsArchive
+
+Then removes those rows from active Orders and OrderItems.
+
+10. FORMATTING AND DROPDOWNS
+----------------------------
+Use these after setup or after adding many new columns:
+
+Freshly Mart Backend > Format All Backend Sheets
+Freshly Mart Backend > Apply Dropdown Validations
+
+This improves readability and prevents wrong status values.
+
+11. IMPORTANT OPERATING RULE
+----------------------------
+Do not manually delete master data unless you have a backup.
+For regular operations, use the menu functions only.

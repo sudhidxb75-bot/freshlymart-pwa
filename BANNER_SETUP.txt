@@ -1,0 +1,23 @@
+Freshly Mart V4 Sliding Banner Setup
+
+1. Upload the revised website files to GitHub Pages.
+2. Paste FreshlyMart_AppsScript.gs into your Google Sheet Apps Script project.
+3. Run setupFreshlyMart() once.
+4. Run setupFreshlyMartBanners() once.
+5. Deploy the Apps Script as Web App.
+6. Paste the Web App URL into assets/app.js under BACKEND_URL.
+
+Banners Sheet Columns:
+- Title: main banner heading
+- Subtitle: short banner message
+- ImageURL: optional image link. If blank, emoji icon will show.
+- Button1Text / Button1Link: first CTA button
+- Button2Text / Button2Link: second CTA button
+- BannerType: Hero / Offer / Seller / Hub
+- DisplayOrder: sorting order
+- Status: Active or Hidden
+- BackgroundColor / BackgroundColor2 / TextColor: optional color controls
+- Icon: fallback emoji if image is blank
+
+To hide a banner, set Status to Hidden.
+To change an offer, edit the row in the Banners sheet. No website code change is required.

@@ -1,0 +1,18 @@
+Freshly Mart V5.3 - Delivery Slot Time Formatting Fix
+
+Issue fixed:
+- StartTime, EndTime and CutOffTime were showing as 30-Dec-1899 because Google Sheets stores time-only values as a date serial with base date 30-Dec-1899.
+
+What changed:
+- Time-only columns now use hh:mm AM/PM format.
+- DateTime columns still use dd-mmm-yyyy hh:mm AM/PM format.
+- Website delivery slot API now returns clean time text such as 05:00 PM instead of date/time objects.
+
+After pasting this script:
+1. Save Apps Script.
+2. Run setupFreshlyMart().
+3. Reload Google Sheet.
+4. From Freshly Mart Backend menu, click Fix Delivery Slot Time Formatting if needed.
+5. Existing rows will display only time values.
+
+This is a display formatting fix. Your sample data is not corrupted.

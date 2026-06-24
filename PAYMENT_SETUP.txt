@@ -1,0 +1,31 @@
+Freshly Mart V5.7 - UPI Only Payment Setup
+
+Final payment rule:
+- All customer payments must be made only to Freshly Mart UPI / QR code.
+- No cash payment.
+- No seller, hub partner or delivery partner should collect cash.
+- Hub partners only verify UPI payment proof/reference and hand over the order after payment is done.
+
+Allowed website payment options:
+1. UPI Online
+   Customer pays immediately after placing the order. Status starts as UPI Pending Verification.
+
+2. UPI on Delivery
+   Customer pays at delivery by scanning Freshly Mart UPI QR. Status starts as UPI Pending at Delivery.
+
+3. UPI at Hub Pickup
+   Customer pays at the hub by scanning Freshly Mart UPI QR. Status starts as UPI Pending at Hub.
+
+Backend setup:
+1. Replace FreshlyMart_AppsScript.gs in Apps Script.
+2. Run setupFreshlyMart().
+3. Reload the Google Sheet.
+4. Enter your UPI ID in Settings sheet row SettingName = UPIID.
+5. Optional: add QR image URL in UPIQRCodeImageURL.
+6. Redeploy Apps Script as Web App.
+7. Paste Web App URL into assets/app.js BACKEND_URL.
+
+Important:
+- Old COD rows should not be used for live operations.
+- New orders will be blocked if any payment mode outside UPI Online, UPI on Delivery, or UPI at Hub Pickup is submitted.
+- Delivery sheets now show: NO CASH. Customer must pay only to Freshly Mart UPI / QR before handover.

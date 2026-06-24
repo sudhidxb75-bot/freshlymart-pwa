@@ -1,0 +1,8 @@
+Freshly Mart Security Notes
+
+- Admin link is removed from public navigation and footer.
+- Access admin by direct private URL only: admin-login.html
+- Change AdminCode in the Settings sheet after running setupFreshlyMart().
+- Admin code is checked by Apps Script backend, not exposed in assets/app.js.
+- Admin dashboard data and approval actions require a backend-issued admin token.
+- This is still a low-cost starter architecture using Google Apps Script. For large-scale marketplace operations, migrate admin authentication to a stronger server/database authentication system.

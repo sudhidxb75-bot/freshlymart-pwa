@@ -1,0 +1,25 @@
+Freshly Mart V5.2 - Shop by Pincode Fix
+
+What was fixed:
+1. Homepage Shop by pincode now checks Apps Script action=checkPincode.
+2. Apps Script now checks HubAreas first, then Hubs as fallback.
+3. Checkout blocks non-serviceable pincodes.
+4. Checkout assigns HubID, HubName, Area, DeliveryCharge and DeliverySlot.
+5. Local Stores page can load approved sellers by pincode from backend.
+
+Required backend sheets:
+- HubAreas: Pincode, AreaName, City, HubID, HubName, PickupAvailable, HomeDeliveryAvailable, DeliveryCharge, Status
+- Hubs: HubID, HubName, Pincode, PickupAvailable, HomeDeliveryAvailable, DeliveryCharge, Status
+- DeliverySlots: HubID, SlotName, StartTime, EndTime, CutOffTime, Status
+
+Test sample pincodes after running addFreshlyMartSampleData():
+- 673571: Kunnamangalam and Peringolam sample hubs
+- 673008: Medical College sample hub
+
+Steps:
+1. Replace your Apps Script with FreshlyMart_AppsScript.gs from this package.
+2. Run setupFreshlyMart().
+3. Optional: run addFreshlyMartSampleData() for testing.
+4. Deploy Apps Script as Web App again.
+5. Paste the new Web App URL into assets/app.js BACKEND_URL.
+6. Upload the revised website files to GitHub.

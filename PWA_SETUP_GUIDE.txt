@@ -1,0 +1,75 @@
+Freshly Mart PWA Setup Guide
+================================
+
+This package converts the Freshly Mart website into a mobile-first Progressive Web App (PWA).
+It keeps the same Freshly Hub business model, seller dashboard, admin dashboard, UPI-only payment flow,
+receipts, reports, GST/FSSAI compliance rules, pincode checking and backend automation from V5.8.
+
+What is added
+-------------
+1. manifest.webmanifest
+2. service-worker.js
+3. offline.html
+4. assets/pwa.js
+5. app icons in assets/icons/
+6. mobile bottom navigation
+7. install prompt support
+8. mobile app style CSS
+9. PWA shortcuts for Grocery, Fresh Items, Cart and Seller Login
+
+Important files
+---------------
+- index.html: mobile-first home page with JioMart-style app flow
+- assets/style.css: includes PWA mobile layout and bottom nav styling
+- assets/pwa.js: registers service worker, install prompt and bottom navigation
+- manifest.webmanifest: app name, icons, shortcuts and standalone mode
+- service-worker.js: app-shell cache and offline support
+- offline.html: fallback page when offline
+- FreshlyMart_AppsScript.gs: backend automation retained from V5.8
+
+Setup steps
+-----------
+1. Upload all files to GitHub Pages.
+2. Open the Google Sheet backend.
+3. Replace Apps Script with FreshlyMart_AppsScript.gs.
+4. Run setupFreshlyMart().
+5. Update Settings sheet:
+   - UPIID
+   - UPIQRCodeImageURL
+   - AdminCode
+   - FreshlyWebsiteURL
+   - AllowCashPayment = No
+6. Deploy Apps Script as Web App:
+   - Execute as: Me
+   - Who has access: Anyone
+7. Copy the Apps Script Web App URL.
+8. Open assets/app.js and paste the URL in BACKEND_URL.
+9. Upload updated assets/app.js to GitHub.
+10. Open your live website in Chrome/Android and tap "Install" or "Add to Home screen".
+
+Testing PWA
+-----------
+- In Chrome desktop: open DevTools -> Application -> Manifest.
+- Check that manifest loads correctly.
+- Check that service worker is activated.
+- Use Lighthouse -> PWA check.
+- Test mobile layout using Chrome mobile preview.
+
+Notes
+-----
+- Apps Script backend/API calls are not cached, so live order submission and payment verification require internet.
+- Public admin button is still removed. Access admin privately using admin-login.html.
+- This is a PWA/mobile web app, not a Play Store native app yet.
+- Later, this PWA can be wrapped as an Android app using Trusted Web Activity or WebView.
+
+Recommended live URL format
+---------------------------
+https://yourdomain.com/
+
+Private admin URL
+-----------------
+https://yourdomain.com/admin-login.html
+
+Version
+-------
+FreshlyMart_PWA_Package_V6_Installable_App

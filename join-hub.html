@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Freshly Mart local marketplace powered by Freshly Hubs.">
+
+<meta name="theme-color" content="#18a058">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Freshly Mart">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="stylesheet" href="assets/style.css"><title>Join Hub Partner | Freshly Mart</title></head>
+<body>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Freshly Mart — Powered by Freshly Hubs</span>
+    <span>Seller Support • Hub Support • WhatsApp Ordering</span>
+  </div>
+</div>
+<header class="header">
+  <div class="container header-main">
+    <a class="brand" href="index.html"><span class="brand-mark">FM</span><span><strong>Freshly Mart</strong><small>Freshness Delivered Locally</small></span></a>
+    <div class="search">
+      <input id="globalSearch" placeholder="Search grocery, home products, fashion, stationery and more">
+      <button class="btn" data-search-btn>Search</button>
+    </div>
+    <div class="header-actions">
+      <button class="pill" data-location-btn>📍 Pincode</button>
+      <a class="pill" href="seller-login.html">Seller</a>
+      <a class="btn secondary" href="cart.html">Cart <span data-cart-count>0</span></a>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="container nav-scroll">
+      <a href="index.html">Home</a>
+      <a href="fresh-items.html">Fresh Items</a>
+      <a href="category.html?cat=grocery">Grocery</a>
+      <a href="category.html?cat=daily-essentials">Daily Essentials</a>
+      <a href="category.html?cat=home-products">Home Products</a>
+      <a href="category.html?cat=fashion">Fashion</a>
+      <a href="category.html?cat=stationery">Stationery</a>
+      <a href="category.html?cat=electronics-accessories">Electronics Accessories</a>
+      <a href="category.html?cat=wellness">Wellness</a>
+      <a href="local-stores.html">Local Stores</a>
+      <a href="sell-with-us.html">Sell With Us</a>
+      <a href="join-hub.html">Join Hub</a>
+      <a href="refer.html">Refer & Earn</a>
+    </div>
+  </nav>
+</header>
+<section class="section"><div class="container narrow"><h1>Join Freshly Hub Network</h1><p class="lead">Hub partners support pickup, sorting, delivery, payments, replacements and returns.</p><form id="hubForm" class="form-grid"><div class="field"><label>Name *</label><input name="Name" required></div><div class="field"><label>Mobile Number *</label><input name="Phone" required></div><div class="field"><label>WhatsApp Number</label><input name="WhatsApp" placeholder="Leave blank to use mobile number"></div><div class="field"><label>Area *</label><input name="Area" required placeholder="Example: Kunnamangalam"></div><div class="field"><label>Pincode *</label><input name="Pincode" required pattern="[0-9]{6}" maxlength="6" placeholder="Example: 673571"></div><div class="field"><label>Available Space</label><input name="AvailableSpace"></div><div class="field"><label>Vehicle Available</label><select name="VehicleAvailable"><option>Yes</option><option>No</option></select></div><div class="field"><label>Interested Role</label><select name="Role"><option>Hub Partner</option><option>Delivery Partner</option><option>Both</option></select></div><div class="field full"><label>Preferred Location / Remarks</label><textarea name="Remarks"></textarea></div><div class="field full"><button class="btn" type="submit">Apply as Hub Partner</button><div class="form-status" data-form-status="hubForm"></div></div></form></div></section>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>Freshly Mart</h3>
+      <p>Freshness, essentials and local deals delivered through trusted Freshly Hubs.</p>
+      <p class="fineprint">Independent Freshly Mart package. JioMart is used only as a layout/category reference.</p>
+    </div>
+    <div><h4>Shop</h4><a href="fresh-items.html">Fresh Items</a><a href="category.html?cat=grocery">Grocery</a><a href="category.html?cat=daily-essentials">Daily Essentials</a><a href="local-stores.html">Local Stores</a></div>
+    <div><h4>Partners</h4><a href="sell-with-us.html">Sell With Us</a><a href="join-hub.html">Join Hub Partner</a><a href="refer.html">Refer & Earn</a><a href="seller-login.html">Seller Login</a></div>
+    <div><h4>Support</h4><a href="returns.html">Returns & Refunds</a><a href="policies.html">Policies</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="container copyright">© Freshly Mart. Built for GitHub Pages + Google Sheets + Apps Script.</div>
+</footer>
+<script src="assets/app.js"></script>
+<script src="assets/pwa.js"></script>
+</body>
+</html>

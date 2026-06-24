@@ -1,0 +1,85 @@
+Freshly Mart V5.8 - Payment & Receipt Automation
+=================================================
+
+Payment rule
+------------
+All customer payments must be made only to Freshly Mart UPI / QR.
+No cash collection by hubs, sellers or delivery partners.
+
+Customer-facing payment modes
+-----------------------------
+1. UPI Online
+2. UPI on Delivery
+3. UPI at Hub Pickup
+
+Backend sheets added
+--------------------
+- PaymentVerifications
+- Receipts
+- SupplierPayments
+- SellerSettlements
+- HubSettlements
+- DeliverySettlements
+- Discounts
+- TaxSummary
+- ExpenseTracker
+- PaymentReconciliation
+- SettlementLog
+
+New Apps Script menu
+--------------------
+Freshly Mart Backend > Payments & Receipts
+
+Functions included
+------------------
+- verifyPaymentByOrderIdPrompt()
+- generateReceiptByOrderIdPrompt()
+- generateReceiptsForPaidOrders()
+- generatePaymentReconciliation()
+- generateCurrentMonthSellerSettlements()
+- generateCurrentMonthSupplierPayments()
+- generateCurrentMonthHubSettlements()
+- generateCurrentMonthDeliverySettlements()
+- generateCurrentMonthPaymentAutomation()
+- markSettlementPaidPrompt()
+- addManualExpensePrompt()
+
+Admin dashboard additions
+-------------------------
+The private admin dashboard now includes a Payments & Receipts tab with forms for:
+- Verify UPI payment
+- Generate receipt
+- Run current month payment automation
+- Mark settlement paid
+- Record expense payment
+
+Setup steps
+-----------
+1. Replace the Apps Script with FreshlyMart_AppsScript.gs.
+2. Run setupFreshlyMart().
+3. Reload the Google Sheet.
+4. Update Settings sheet:
+   - UPIID = your Freshly Mart UPI ID
+   - UPIQRCodeImageURL = your QR image URL, optional
+   - AllowCashPayment = No
+5. Deploy Apps Script as Web App again.
+6. Paste new Web App URL in assets/app.js.
+
+Receipt workflow
+----------------
+1. Customer places order.
+2. Payment row is created with pending UPI status.
+3. Admin verifies UPI payment by OrderID and UPI reference.
+4. Backend updates Orders and Payments as Paid to Freshly Mart.
+5. Customer receipt is created automatically in Receipts sheet.
+6. Paid delivered orders are used for seller/supplier/hub/delivery settlements.
+
+Settlement workflow
+-------------------
+Generate All Payment Automation creates settlement rows for the current month.
+After paying a seller/supplier/hub/delivery partner, use Mark Settlement Paid by ID.
+A payment voucher is generated automatically in Receipts and SettlementLog.
+
+Tax summary note
+----------------
+TaxSummary is a placeholder sheet for CA/GST review. Enter GST/TCS/TDS details as applicable.

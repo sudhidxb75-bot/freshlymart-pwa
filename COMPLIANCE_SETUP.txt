@@ -1,0 +1,22 @@
+Freshly Mart V5.6 - GST/FSSAI Compliance Setup
+
+What changed:
+1. GST is mandatory by default for seller approval.
+2. FSSAI is mandatory for food-related seller/product approval.
+3. Admin can approve with compliance relaxation only when the following are provided:
+   - ComplianceRelaxation = Yes
+   - RelaxationFor = GST / FSSAI / Both
+   - RelaxationReason
+   - RelaxationValidUntil
+   - RelaxationApprovedBy
+   - ComplianceRiskLevel = Low / Medium / High
+
+After replacing Apps Script:
+1. Run setupFreshlyMart()
+2. Reload Google Sheet.
+3. Check Sellers sheet for new columns: GSTStatus, GSTRequired, GSTVerified, PANNumber, FSSAIRequired, ComplianceRelaxation and relaxation fields.
+4. Check ProductSubmissions and Products sheets for GSTApplicable, GSTPercent, HSNCode, GSTValidated and compliance fields.
+5. Use Admin Dashboard > Manual Actions to approve sellers with or without relaxation.
+
+Important:
+Relaxation should be temporary. Always enter a valid-until date. Consult a CA / compliance advisor before launch.
